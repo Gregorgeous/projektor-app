@@ -2,9 +2,9 @@
   <div id="app">
     <nav id="navigation" class="navbar" role="navigation" aria-label="main navigation">
       <div class="FTLLogo">
-      <scoutLogoTop id="FTLLogo--top" ></scoutLogoTop>
-      <span id="FTLLogo--middle">Wejdź do systemu</span>
-      <scoutLogoBottom id="FTLLogo--bottom"></scoutLogoBottom>
+        <scoutLogoTop id="FTLLogo--top"></scoutLogoTop>
+        <span id="FTLLogo--middle">Wejdź do systemu</span>
+        <scoutLogoBottom id="FTLLogo--bottom"></scoutLogoBottom>
       </div>
       <!-- <router-link to="/">Home</router-link> -->
     </nav>
@@ -15,113 +15,127 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import scoutLogoTop from '@/components/Scout-website-logo/scoutLogoTopSvg.vue'
-import scoutLogoBottom from '@/components/Scout-website-logo/scoutLogoBottomSvg.vue'
+  // @ is an alias to /src
+  import scoutLogoTop from '@/components/Scout-website-logo/scoutLogoTopSvg.vue'
+  import scoutLogoBottom from '@/components/Scout-website-logo/scoutLogoBottomSvg.vue'
 
 
-export default {
-  name: 'home',
-  components: {
-    scoutLogoTop,
-    scoutLogoBottom
+  export default {
+    name: 'home',
+    components: {
+      scoutLogoTop,
+      scoutLogoBottom
+    }
   }
-}
 </script>
 
+
 <style lang="scss">
+  @font-face {
+    font-family: 'ZnikomitNo25';
+    src: url('./assets/ZnikomitNo25.otf');
+  }
+
+  * {
+    margin: 0;
+    font-weight: 400;
+  }
+
   html {
     height: 100vh;
   }
-  body{
+
+  body {
     margin: 0 0 8px;
   }
 
-  main{
+  main {
+    font-family: ZnikomitNo25;
     background-color: #F1F8FE;
     height: 90vh; //TODO: change this later
   }
 
-  .FTLLogo{
+  .FTLLogo {
     fill: #483077;
     cursor: pointer;
     align-self: stretch;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    &:hover{
-      -webkit-animation: rotate-90 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: rotate-90 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both ;
-          & #FTLLogo--top{
-            animation: move-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both  0.25s;
-          }
-          & #FTLLogo--bottom{
-            animation: move-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both  0.25s;
-          }
-          & #FTLLogo--middle{
-            animation: rotate-and-scale 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both  0.1s;
-          }
-    } 
+    &:hover {
+      -webkit-animation: rotate-90 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both ;
+      animation: rotate-90 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      & #FTLLogo--top {
+        animation: move-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 0.25s;
+      }
+      & #FTLLogo--bottom {
+        animation: move-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 0.25s;
+      }
+      & #FTLLogo--middle {
+        animation: rotate-and-scale 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both 0.1s;
+      }
+    }
   }
 
-@keyframes rotate-90 {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+  @keyframes rotate-90 {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg) translateY(-20px);
+    }
   }
-  100%{
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg) translateY(-20px);
-  }
-}
 
-@keyframes rotate-and-scale {
-  0%{
-    transform: rotate(0);
-    font-size: 5px;
-  }
-  70%{
-    font-size: 5px;
-    transform: rotate(-90deg);
-  }
-  
-  100%{
-    transform: rotate(-90deg);
-    font-size: 15px;
-  }
-}
+  @keyframes rotate-and-scale {
+    0% {
+      transform: rotate(0);
+      font-size: 5px;
+    }
+    70% {
+      font-size: 5px;
+      transform: rotate(-90deg);
+    }
 
-@keyframes move-top{
-  from{
-    transform: translateY(0)
+    100% {
+      transform: rotate(-90deg);
+      font-size: 15px;
+    }
   }
-  to{
-    transform: translateY(-60px);
-  }
-}
 
-@keyframes move-bottom{
-  from{
-    transform: translateY(0)
+  @keyframes move-top {
+    from {
+      transform: translateY(0)
+    }
+    to {
+      transform: translateY(-60px);
+    }
   }
-  to{
-    transform: translateY(60px);
+
+  @keyframes move-bottom {
+    from {
+      transform: translateY(0)
+    }
+    to {
+      transform: translateY(60px);
+    }
   }
-}
 
 
-  #FTLLogo--top{
+  #FTLLogo--top {
     height: 25px;
   }
 
-  #FTLLogo--middle{
+  #FTLLogo--middle {
     font-size: 7px;
     pointer-events: none
   }
 
-  #FTLLogo--bottom{
+  #FTLLogo--bottom {
     height: 13px;
   }
+
   #app {
     position: relative;
     margin: 0;
