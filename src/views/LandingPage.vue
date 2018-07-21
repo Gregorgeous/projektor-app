@@ -2,7 +2,7 @@
   <div class="landing-page">
     <!-- <unitLeaderSection/> -->
     <h1 id="lp-logo">Projektor</h1>
-    
+    <h2 id="lp-subheader">Twój pomocnik w realizowaniu projektów starszoharcerskich!</h2>
   </div>
 </template>
 
@@ -45,8 +45,23 @@
       }
     }
 
+    & #lp-subheader::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: right;
+      width: 100%;
+      height: 100%;
+      background-color: #F1F8FE;
+      // background-color: black;
+      filter: blur(5px);
+      animation: subheader-slide-fade-in 2.5s cubic-bezier(0.63, 0.01, 0.43, 1.01) .5s both;
+    }
     & #lp-subheader{
+      position: relative;
       margin-top: 30px;
+      animation: opacity-appear-effect 1.5s cubic-bezier(0, 0, 0.28, 1) 1.3s both;
     }
   } 
   
@@ -106,4 +121,26 @@
       opacity: 0.4;
     }
   }
+
+  @keyframes subheader-slide-fade-in {
+    0%{
+      opacity: 1;
+      transform-origin: right;
+    }
+    10%{
+      opacity: 1;
+    }
+    99%{
+      transform: scaleX(0.00001);
+      display: none;
+      content: '';
+    }
+    100%{
+      opacity: 0;
+      transform: scaleX(0.00001);
+      content: unset;
+
+    }
+  }
+
 </style>
