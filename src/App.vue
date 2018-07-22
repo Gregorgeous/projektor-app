@@ -42,11 +42,13 @@
   }
 
   html {
+    margin: 0 0 0 0;
     height: 100vh;
   }
 
   body {
     margin: 0 0 8px;
+    
   }
 
   main {
