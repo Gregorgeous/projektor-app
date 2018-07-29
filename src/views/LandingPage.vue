@@ -79,7 +79,7 @@
     grid-column-gap: 40px;
     position: relative;
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       left: -10%;
@@ -87,10 +87,9 @@
       width: 120%;
       height: 120%;
       transform-origin: bottom;
-      background-color: #F1F8FE;  
-      // background-color: black;
+      background-color: #F1F8FE; // background-color: black;
       filter: blur(1px);
-      animation: hero-circles-appear 1s cubic-bezier(1,-0.96, 0.36, 0.9) .8s both;
+      animation: hero-circles-appear 1s ease-in 1.3s both;
     }
 
     & .hero1 {
@@ -201,51 +200,49 @@
   }
 
   @keyframes pulse1 {
-    0%{
+    0% {
       box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
     }
-    50%{
+    50% {
       box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 0.50);
     }
-    100%{
+    100% {
       box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
     }
   }
 
   @keyframes pulse2 {
-    0%{
+    0% {
       box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
     }
-    50%{
+    50% {
       box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 0.50);
     }
-    100%{
+    100% {
       box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
     }
   }
 
   @keyframes pulse3 {
-    0%{
+    0% {
       box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
     }
-    50%{
+    50% {
       box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 0.50);
     }
-    100%{
+    100% {
       box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
     }
   }
 
 
   @keyframes hero-circles-appear {
-    0%{
-      border-top: 1px solid black;
+    0% {
       transform: scale(1, 1);
       filter: drop-shadow(1);
     }
-    100%{
+    100% {
       transform: scale(1, 0);
     }
   }
-
 </style>
