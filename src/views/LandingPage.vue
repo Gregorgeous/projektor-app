@@ -5,9 +5,27 @@
     <h2 id="lp-subheader">Twój pomocnik w realizowaniu projektów starszoharcerskich!</h2>
 
     <div class="hero-circles">
-      <div class="hero1"></div>
-      <div class="hero2"></div>
-      <div class="hero3"></div>
+      <div class="hero-div" id="hero1">
+        <img src="@/assets/heroImg1.jpg">
+        <div class="description">
+          <h3>Drużynowi/Kadra</h3>
+          <span>Zobacz więcej</span>
+        </div>
+      </div>
+      <div class="hero-div" id="hero2">
+        <img src="@/assets/heroImg2.jpg">
+        <div class="description">
+          <h3>Harcerze starsi</h3>
+          <span>Zobacz więcej</span>
+        </div>
+      </div>
+      <div class="hero-div" id="hero3">
+        <img src="@/assets/heroImg3.jpg" id="libraryImg">
+        <div class="description">
+          <h3>Biblioteka projektów</h3>
+          <span>Zobacz więcej</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -92,37 +110,82 @@
       animation: hero-circles-appear 1s ease-in 1.3s both;
     }
 
-    & .hero1 {
+    & .hero-div {
       cursor: pointer;
       border: 1px solid #707070;
       border-radius: 50%;
       background-color: #fafafa;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
-      -moz-box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
-      box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
-      animation: pulse1 2.6s ease-in-out both infinite;
+      overflow: hidden;
+      position: relative;
 
+      & .description {
+        position: absolute;
+        height: 40%;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: #ffffffc4;
+        & h3 {
+          margin-top: 10px;
+          font-size: .9rem;
+          text-shadow: 0px 0px 13px rgba(255,255,255,0.38);
+        }
+        & span {
+          display: block;
+          margin-top: 10px;
+          font-size: .75rem;
+          border: 1px dashed rgba(0, 49, 182, 0.5);
+          font-weight: 900;
+          padding: 1px 0px 2px;
+          transition: background-color .2s ease-out;
+          &:hover{
+            background-color: white;
+          }
+        }
+      } // &::after {
+      //   content: "tekst";
+      //   position: absolute;
+      //   height: 40%;
+      //   width: 100%;
+      //   left: 0;
+      //   bottom: 0;
+      //   background-color: #fafafa;
+      // }
+      &#hero1 {
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 49, 182, 1);
+        animation: pulse1 2.6s ease-in-out both infinite;
+      }
+
+      &#hero2 {
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
+        box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
+        animation: pulse2 2.6s ease-in-out both infinite;
+      }
+
+      &#hero3 {
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
+        -moz-box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
+        box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
+        animation: pulse3 2.6s ease-in-out both infinite;
+      }
+
+      & img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: scale(1.51) translateX(-19px);
+
+        &#libraryImg {
+          object-fit: cover;
+          transform: none;
+        }
+
+      }
     }
 
-    & .hero2 {
-      border: 1px solid #707070;
-      border-radius: 50%;
-      background-color: #fafafa;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
-      -moz-box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
-      box-shadow: 0px 0px 20px 0px rgba(71, 62, 16, 1);
-      animation: pulse2 2.6s ease-in-out both infinite;
-    }
-
-    & .hero3 {
-      border: 1px solid #707070;
-      border-radius: 50%;
-      background-color: #fafafa;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
-      -moz-box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
-      box-shadow: 0px 0px 20px 0px rgba(142, 69, 69, 1);
-      animation: pulse3 2.6s ease-in-out both infinite;
-    }
 
   } // ============ Animations ================
   @keyframes opacity-appear-effect {
